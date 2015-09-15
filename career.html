@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title>Career | Nova</title>
+  <title>Blog</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
 
@@ -37,33 +37,17 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </a>
-        <a id="logo" class="pull-left" href="index.html"></a>
+        
         <div class="nav-collapse collapse pull-right">
           <ul class="nav">
             <li><a href="index.html">Home</a></li>
-            <li><a href="about-us.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="portfolio.html">Portfolio</a></li>
-            <li class="dropdown active">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="icon-angle-down"></i></a>
-              <ul class="dropdown-menu">
-                <li class="active"><a href="career.html">Career</a></li>
-                <li><a href="blog-item.html">Blog Single</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="404.html">404</a></li>
-                <li><a href="typography.html">Typography</a></li>
-                <li><a href="registration.html">Registration</a></li>
-                <li class="divider"></li>
-                <li><a href="privacy.html">Privacy Policy</a></li>
-                <li><a href="terms.html">Terms of Use</a></li>
-              </ul>
-            </li>
-            <li><a href="blog.html">Blog</a></li> 
+            <li><a href="about-us.html">About Me</a></li>
+           
+            <li><a href="portfolio.html">Skills</a></li>
+            <li><a href="career.html">Blog</a></li>
+            <li><a href="blog.html">Projects</a></li> 
             <li><a href="contact-us.html">Contact</a></li>
-            <li class="login">
-              <a data-toggle="modal" href="#loginForm"><i class="icon-lock"></i></a>
-            </li>
+            
           </ul>        
         </div><!--/.nav-collapse -->
       </div>
@@ -75,13 +59,13 @@
     <div class="container">
       <div class="row-fluid">
         <div class="span6">
-          <h1>Career</h1>
+          <h1>HIMANSHI NIGAM</h1>
         </div>
         <div class="span6">
           <ul class="breadcrumb pull-right">
             <li><a href="index.html">Home</a> <span class="divider">/</span></li>
             <li><a href="#">Pages</a> <span class="divider">/</span></li>
-            <li class="active">Career</li>
+            <li class="active">Blog</li>
           </ul>
         </div>
       </div>
@@ -91,196 +75,89 @@
 
   <!-- Career -->
   <section id="career" class="container">
+    <h1>Blog</h1>
     <div class="center">
-      <h2>Pellentesque habitant morbi tristique senectus et netus</h2>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+      <h2>CRON JOBS in LINUX</h2><hr>
     </div>
-    <hr>
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. Donec non enim in turpis pulvinar facilisis. Ut felis. Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus</p>
+    <h3>What is cron ??</h3>
+      <p> It is an acronym for <b>"Command Run On Notice" or for "Commands Run Over Night"</b><br />
+        The software utility Cron is a time-based job scheduler in Unix-like computer operating systems. People who set up and maintain software environments use cron to schedule jobs (commands or shell scripts) to run periodically at fixed times, dates, or intervals. It typically automates system maintenance or administration—though its general-purpose nature makes it useful for things like connecting to the Internet and downloading email at regular intervals.<br />
+        "cron" is most suitable for scheduling repetitive tasks. Scheduling one-time tasks is often more easily accomplished using the associated at utility.</p>
     
-    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, commodo vitae, ornare sit amet</p>
+    <hr><h3>Crontab File...</h3>
+    <p>Cron is driven by a crontab (cron table) file,A crontab is a simple text file with a list of commands meant to be run at specified times. It is edited with a command-line utility. These commands (and their run times) are then controlled by the cron daemon, which executes them in the system background. A configuration file that specifies shell commands to run periodically on a given schedule. </p><p>The crontab files are stored where the lists of jobs and other instructions to the cron daemon are kept. Users can have their own individual crontab files and often there is a system wide crontab file (usually in /etc or a subdirectory of /etc) that only system administrators can edit.</p>
+    <p>Each line of a crontab file represents a job, and is composed of a CRON expression, followed by a shell command to execute.Normally the job is executed when the time/date specification fields all match the current time and date.</p>
+    <h4>Examples</h4>
     
+    <p><div>The following clears the Apache error log at one minute past midnight (00:01) every day, assuming that the default shell for the cron user is Bourne shell compliant:</p>1 0 * * *  printf > /var/log/apache/error_log</div>
+    <p><div>This example runs a shell program called export_dump.sh at 20:00 every day.</p>0 20 * * * /home/oracle/scripts/export_dump.sh</div><br />
     <hr>
+    <h3>Cron Expression</h3>
+    
+    <p>A CRON expression is a string comprising five or six fields separated by white space that represents a set of times, normally as a schedule to execute some routine.<br />
+<h4>Format</h4>
+<img src="images/sample/cron1.png" />
+<br /><br />
 
+<p>In some uses of the CRON format there is also a seconds field at the beginning of the pattern. In that case, the CRON expression is a string comprising 6 or 7 fields.</p>
+
+<p><b>Comma ( , )</b>
+    Commas are used to separate items of a list. For example, using "MON,WED,FRI" in the 5th field (day of week) means Mondays, Wednesdays and Fridays.</p>
+
+<p><b>Hyphen ( - )</b>
+    Hyphens define ranges. For example, 2000-2010 indicates every year between 2000 and 2010 AD, inclusive.</p>
+
+<p><b>Percent ( % )</b>
+    Percent-signs (%) in the command, unless escaped with backslash (\), are changed into newline characters, and all data after the first % are sent to the command as standard input.</p><br />
+
+    
+    <hr>
+    <h3>Using Cron</h3>
+    <p>To use cron for tasks meant to run only for your user profile, add entries to your own user's crontab file. Start the crontab editor from a terminal window:</p> <img src="images/sample/cron2.png" /><br /><br />
+    <h4>Special Strings</h4>
+    <p>Cron also offers some special strings: </p>
+    <img src="images/sample/cron3.png" /><br /><br />
+    <hr>
     <div class="row-fluid">
-      <!-- Left Column -->
-      <div class="span6">
-        <h3>Creative Designer</h3>
-        <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p>
-        <h4>Requirements</h4>
-        <ul class="arrow">
-         <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-         <li>Aliquam tincidunt mauris eu risus.</li>
-         <li>Vestibulum auctor dapibus neque.</li>
-         <li>Lorem ipsum dolor sit amet adipiscing elit.</li>
-         <li>Aliquam tincidunt mauris eu risus.</li>
-         <li>Vestibulum auctor dapibus neque.</li>
-       </ul>
+    <div class="center">
+      <h2>DAEMONS in LINUX</h2>
+    </div>
+    <p>A <b>Daemon </b>is a computer program that runs as a background process, rather than being under the direct control of an interactive user.</p>
+    <p> Daemons are usually instantiated as processes. A process is an executing (i.e., running) instance of a program. Processes are managed by the kernel (i.e., the core of the operating system), which assigns each a unique process identification number (PID).</p>
 
-       <hr>
+<p>There are three basic types of processes in Linux: interactive, batch and daemon. Interactive processes are run interactively by a user at the command line (i.e., all-text mode). Batch processes are submitted from a queue of processes and are not associated with the command line; they are well suited for performing recurring tasks when system usage is otherwise low.</p>
 
-       <h3>Technical Writter</h3>
-       <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p>
-       <h4>Requirements</h4>
-       <ul class="arrow">
-         <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-         <li>Aliquam tincidunt mauris eu risus.</li>
-         <li>Vestibulum auctor dapibus neque.</li>
-         <li>Lorem ipsum dolor sit amet adipiscing elit.</li>
-         <li>Aliquam tincidunt mauris eu risus.</li>
-         <li>Vestibulum auctor dapibus neque.</li>
-       </ul>
+<h3>Creation of Daemons</h3>
+    <p>In a Unix environment, the parent process of a daemon is often, but not always, the init process. A daemon is usually either created by a process forking a child process and then immediately exiting, thus causing init to adopt the child process, or by the init process directly launching the daemon. In addition, a daemon launched by forking and exiting typically must perform other operations, such as dissociating the process from any controlling terminal (tty). Such procedures are often implemented in various convenience routines such as daemon(3) in Unix.</p>
+    <p>Systems often start daemons at boot time and serve the function of responding to network requests, hardware activity, or other programs by performing some task. Daemons can also configure hardware (like udevd on some Linux systems), run scheduled tasks (like cron), and perform a variety of other tasks.</p><br />
+    
+    <hr>
+    <div class="row-fluid">
+    <div class="center">
+      <h2>Difference between Cronjobs and DAEMONS</h2>
+    </div><br />
+    <p>In general, if your task needs to run more than a few times per hour (maybe less than 10 minutes) you probably want to run a daemon.</p>
 
-     </div>
-     <!-- /Left Column -->
+<p>A daemon which is always running, has the following benefits:
 
-     <!-- Right Column -->
-     <div class="span6">
-      <h3>Web Developer</h3>
-      <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p>
-      <h4>Requirements</h4>
-      <ul class="arrow">
-       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-       <li>Aliquam tincidunt mauris eu risus.</li>
-       <li>Vestibulum auctor dapibus neque.</li>
-       <li>Lorem ipsum dolor sit amet adipiscing elit.</li>
-       <li>Aliquam tincidunt mauris eu risus.</li>
-       <li>Vestibulum auctor dapibus neque.</li>
-     </ul>
+    1.It can run at frequencies greater than 1 per minute<br />
+    2.It can remember state from its previous run more easily, which makes programming simpler (if you need to remember state) and can improve efficiency in some cases.<br />
+    3.BUT if it quits (e.g. following an error), it won't automatically be restarted unless you implemented that feature<br />
+    4.It uses memory even when not doing anything useful.<br />
+    5.Memory leaks are more of a problem.<br /><p>
+    <p>A cronjob is a proccess that is executed once in a while. An example of cronjob could be a script that remove the content of a temporary folder once in a while, or a program that sends push notifications every day at 9.00 am to a bunch of devices. </p>
 
-     <hr>
+<p>In general, robustness favours "cron", and performance favours a "daemon".</p>
 
-     <h3>Marketing Manager</h3>
-     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est.</p>
-     <h4>Requirements</h4>
-     <ul class="arrow">
-       <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-       <li>Aliquam tincidunt mauris eu risus.</li>
-       <li>Vestibulum auctor dapibus neque.</li>
-       <li>Lorem ipsum dolor sit amet adipiscing elit.</li>
-       <li>Aliquam tincidunt mauris eu risus.</li>
-       <li>Vestibulum auctor dapibus neque.</li>
-     </ul>
+    
 
-   </div>
-   <!-- /Right Column -->
+    </div>
 
- </div>
- <p>&nbsp;</p>
-
+    
+ 
 </section>
 <!-- /Career -->
 
-<!--Bottom-->
-<section id="bottom" class="main">
-  <!--Container-->
-  <div class="container">
-
-    <!--row-fluids-->
-    <div class="row-fluid">
-
-      <!--Contact Form-->
-      <div class="span3">
-        <h4>ADDRESS</h4>
-        <ul class="unstyled address">
-          <li>
-            <i class="icon-home"></i><strong>Address:</strong> 1032 Wayback Lane, Wantagh<br>NY 11793
-          </li>
-          <li>
-            <i class="icon-envelope"></i>
-            <strong>Email: </strong> support@email.com
-          </li>
-          <li>
-            <i class="icon-globe"></i>
-            <strong>Website:</strong> www.domain.com
-          </li>
-          <li>
-            <i class="icon-phone"></i>
-            <strong>Toll Free:</strong> 631-409-3105
-          </li>
-        </ul>
-      </div>
-      <!--End Contact Form-->
-
-      <!--Important Links-->
-      <div id="tweets" class="span3">
-        <h4>OUR COMPANY</h4>
-        <div>
-          <ul class="arrow">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Support</a></li>
-            <li><a href="#">Terms of Use</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Copyright</a></li>
-            <li><a href="#">We are hiring</a></li>
-            <li><a href="#">Clients</a></li>
-            <li><a href="#">Blog</a></li>
-          </ul>
-        </div>  
-      </div>
-      <!--Important Links-->
-
-      <!--Archives-->
-      <div id="archives" class="span3">
-        <h4>ARCHIVES</h4>
-        <div>
-          <ul class="arrow">
-            <li><a href="#">December 2012 (1)</a></li>
-            <li><a href="#">November 2012 (5)</a></li>
-            <li><a href="#">October 2012 (8)</a></li>
-            <li><a href="#">September 2012 (10)</a></li>
-            <li><a href="#">August 2012 (29)</a></li>
-            <li><a href="#">July 2012 (1)</a></li>
-            <li><a href="#">June 2012 (31)</a></li>
-          </ul>
-        </div>
-      </div>
-      <!--End Archives-->
-
-      <div class="span3">
-        <h4>FLICKR GALLERY</h4>
-        <div class="row-fluid first">
-          <ul class="thumbnails">
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829540293/" title="01 (254) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7003/6829540293_bd99363818_s.jpg" width="75" height="75" alt="01 (254)"></a>
-            </li>
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829537417/" title="01 (196) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7013/6829537417_465d28e1db_s.jpg" width="75" height="75" alt="01 (196)"></a>
-            </li>
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829527437/" title="01 (65) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7021/6829527437_88364c7ec4_s.jpg" width="75" height="75" alt="01 (65)"></a>
-            </li>
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829524451/" title="01 (6) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7148/6829524451_a725793358_s.jpg" width="75" height="75" alt="01 (6)"></a>
-            </li>
-          </ul>
-        </div>
-        <div class="row-fluid">
-          <ul class="thumbnails">
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829524451/" title="01 (6) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7148/6829524451_a725793358_s.jpg" width="75" height="75" alt="01 (6)"></a>
-            </li>
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829540293/" title="01 (254) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7003/6829540293_bd99363818_s.jpg" width="75" height="75" alt="01 (254)"></a>
-            </li>
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829537417/" title="01 (196) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7013/6829537417_465d28e1db_s.jpg" width="75" height="75" alt="01 (196)"></a>
-            </li>
-            <li class="span3">
-              <a href="http://www.flickr.com/photos/76029035@N02/6829527437/" title="01 (65) by Victor1558, on Flickr"><img src="http://farm8.staticflickr.com/7021/6829527437_88364c7ec4_s.jpg" width="75" height="75" alt="01 (65)"></a>
-            </li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-    <!--/row-fluid-->
-  </div>
-  <!--/container-->
-
-</section>
-<!--/bottom-->
 
 <!--Footer-->
 <footer id="footer">
@@ -316,27 +193,7 @@
 </footer>
 <!--/Footer-->
 
-<!--  Login form -->
-<div class="modal hide fade in" id="loginForm" aria-hidden="false">
-  <div class="modal-header">
-    <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
-    <h4>Login Form</h4>
-  </div>
-  <!--Modal Body-->
-  <div class="modal-body">
-    <form class="form-inline" action="index.html" method="post" id="form-login">
-      <input type="text" class="input-small" placeholder="Email">
-      <input type="password" class="input-small" placeholder="Password">
-      <label class="checkbox">
-        <input type="checkbox"> Remember me
-      </label>
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </form>
-    <a href="#">Forgot your password?</a>
-  </div>
-  <!--/Modal Body-->
-</div>
-<!--  /Login form -->
+
 
 <script src="js/vendor/jquery-1.9.1.min.js"></script>
 <script src="js/vendor/bootstrap.min.js"></script>
