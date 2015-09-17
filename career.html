@@ -80,44 +80,142 @@
     <div class="center">
       <h2>CRON JOBS in LINUX</h2><hr>
     </div>
+    <p> Most of the Linux users are aware of how commands are run, processes are manipulated and scripts are executed in terminal. But, if you are a Linux system administrator, you might want them to start and execute automatically in the background. As an example, you might consider running a backup job every day, at a specific time, automatically. Or you might consider an example of collecting inventory data of the systems deployed across your network, by running a script automatically on monthly basis. But, how to schedule these jobs and execute them automatically in Linux?</p>
+
+    <p>There is an utility in Linux known as CRON with which you can start your jobs automatically at a desired time and schedule them to get executed periodically.</p>
+
+    <p>Cron utility consists of two parts: The cron daemon and the cron configuration files. Cron daemon is just like any service that is started automatically whenever your system boots. Cron configuration files hold the information of what to do and when to do. The main job of cron daemon is to inspect the configuration regularly (every minute to be more precise) and check if there is any job to be completed.</p><br /> 
     <h3>What is cron ??</h3>
       <p> It is an acronym for <b>"Command Run On Notice" or for "Commands Run Over Night"</b><br />
         The software utility Cron is a time-based job scheduler in Unix-like computer operating systems. People who set up and maintain software environments use cron to schedule jobs (commands or shell scripts) to run periodically at fixed times, dates, or intervals. It typically automates system maintenance or administration—though its general-purpose nature makes it useful for things like connecting to the Internet and downloading email at regular intervals.<br />
         "cron" is most suitable for scheduling repetitive tasks. Scheduling one-time tasks is often more easily accomplished using the associated at utility.</p>
+        <hr><h3>System Cron Directories</h3>
+        <p> In the /etc directory, you will find some sub-directories namely cron.hourly, cron.daily, cron.weekly and cron.monthly. You can put your scripts in these directories, and as their names suggest, they will be automatically executed after certain period of time. For example, if you wish to run a job or service regularly after every week, simple put the script in /etc/cron.weekly directory.</p>
+
+<p>In case you need to execute a script after every fortnight, keeping the script in any of the above mentioned directories will not help. But, every problem has a solution. You can launch Crontab (CRON TABle) editor which provides an interface that is very much similar to vi editor.</p>
+
     
     <hr><h3>Crontab File...</h3>
     <p>Cron is driven by a crontab (cron table) file,A crontab is a simple text file with a list of commands meant to be run at specified times. It is edited with a command-line utility. These commands (and their run times) are then controlled by the cron daemon, which executes them in the system background. A configuration file that specifies shell commands to run periodically on a given schedule. </p><p>The crontab files are stored where the lists of jobs and other instructions to the cron daemon are kept. Users can have their own individual crontab files and often there is a system wide crontab file (usually in /etc or a subdirectory of /etc) that only system administrators can edit.</p>
     <p>Each line of a crontab file represents a job, and is composed of a CRON expression, followed by a shell command to execute.Normally the job is executed when the time/date specification fields all match the current time and date.</p>
-    <h4>Examples</h4>
-    
-    <p><div>The following clears the Apache error log at one minute past midnight (00:01) every day, assuming that the default shell for the cron user is Bourne shell compliant:</p>1 0 * * *  printf > /var/log/apache/error_log</div>
-    <p><div>This example runs a shell program called export_dump.sh at 20:00 every day.</p>0 20 * * * /home/oracle/scripts/export_dump.sh</div><br />
-    <hr>
+     <hr>
     <h3>Cron Expression</h3>
     
     <p>A CRON expression is a string comprising five or six fields separated by white space that represents a set of times, normally as a schedule to execute some routine.<br />
 <h4>Format</h4>
+<img src="images/sample/blog/cronformat.png" /><br /><br />
 <img src="images/sample/cron1.png" />
 <br /><br />
 
 <p>In some uses of the CRON format there is also a seconds field at the beginning of the pattern. In that case, the CRON expression is a string comprising 6 or 7 fields.</p>
+
 
 <p><b>Comma ( , )</b>
     Commas are used to separate items of a list. For example, using "MON,WED,FRI" in the 5th field (day of week) means Mondays, Wednesdays and Fridays.</p>
 
 <p><b>Hyphen ( - )</b>
     Hyphens define ranges. For example, 2000-2010 indicates every year between 2000 and 2010 AD, inclusive.</p>
-
-<p><b>Percent ( % )</b>
+ <p><b>Percent ( % )</b>
     Percent-signs (%) in the command, unless escaped with backslash (\), are changed into newline characters, and all data after the first % are sent to the command as standard input.</p><br />
 
-    
-    <hr>
-    <h3>Using Cron</h3>
-    <p>To use cron for tasks meant to run only for your user profile, add entries to your own user's crontab file. Start the crontab editor from a terminal window:</p> <img src="images/sample/cron2.png" /><br /><br />
-    <h4>Special Strings</h4>
+    <h4>1. Scheduling a Job For a Specific Time</h4><br />
+
+<p>The basic usage of cron is to execute a job in a specific time as shown below.</p> <p>This will execute the Full backup shell script (full-backup) on 10th June 08:30 AM.Please note that the time field uses 24 hours format.</p>
+
+<img src="images/sample/blog/eg1.png" /><br /><br />
+
+  <h4>2. Schedule a Job For More Than One Instance (e.g. Twice a Day)</h4><br />
+  <p>The following script take a incremental backup twice a day every day.</p>
+
+<p>This example executes the specified incremental backup shell script (incremental-backup) at 11:00 and 16:00 on every day. The comma separated value in a field specifies that the command needs to be executed in all the mentioned time.</p>
+
+  <img src="images/sample/blog/eg2.png" /><br /><br />
+  <h4>3. Schedule a Job for Specific Range of Time (e.g. Only on Weekdays)</h4>
+
+<p>If you wanted a job to be scheduled for every hour with in a specific range of time then use the following.Eg- Cron Job everyday during working hours.</p>
+
+<p>This example checks the status of the database everyday (including weekends) during the working hours 9 a.m – 6 p.m</p>
+  <img src="images/sample/blog/eg3.png" /><br /><br />
+
+  <h4>6. Schedule a Job for Every Minute Using Cron.</h4>
+
+<p>The * means all the possible unit — i.e every minute of every hour through out the year.</p>
+<img src="images/sample/blog/eg4.png" /><br /><br />
+<p>More than using this * directly, you will find it very useful in the following cases.</p>
+  <p>- When you specify */5 in minute field means every 5 minutes.</p>
+    <p>- When you specify 0-10/2 in minute field mean every 2 minutes in the first 10 minute.</p>
+    <p>- Thus the above convention can be used for all the other 4 fields.</p><br />
+
+    <h4>7. Schedule a Background Cron Job For Every 10 Minutes.</h4>
+
+<p>Use the following, if you want to check the disk space every 10 minutes.</p>
+  <img src="images/sample/blog/eg5.png" /><br /><br />
+
+  <h4>Special Strings</h4>
+    <p>Instead of specifying values in the 5 fields, we can specify it using a single keyword as mentioned below.
+    There are special cases in which instead of the above 5 fields you can use @ followed by a keyword — such as reboot, midnight, yearly, hourly.</p>
     <p>Cron also offers some special strings: </p>
     <img src="images/sample/cron3.png" /><br /><br />
+  
+    <hr>
+
+    <h3>CronTab Commands</h3>
+    <p>Crontab command manages the cron table that is used by the cron daemon to execute the cron jobs.</p><br>
+
+    <h4>1. Edit Cron Table using Option -e</h4>
+
+<p>-e stands for edit. This allows you to edit the crontab of the current user. If we logged in as root, this will automatically open root’s cron jobs in a Vim editor, and allow us to edit it.</p>
+    <img src="images/sample/blog/eg8.png" /><br /><br />
+    <p>When you save your edits and come out of the Vim editor, it will display oone of the following messages, depending on whether you made any changes or not.</p>
+     <img src="images/sample/blog/eg9.png" /><br /><br />
+
+    <h4>2. Display Cron Table using Option -l</h4>
+
+<p>-l stands for list. This displays the crontab of the current user. If we logged in as root, this will display the cron jobs of root user.</p>
+  <img src="images/sample/blog/eg6.png" /><br /><br />
+
+  <h4>3. Tweaking Other Users Crontab using Option -u</h4>
+
+<p>-u stands for user. This should be followed by a valid username in the system. -u option alone doesn’t do anything. It should be combined with other options.</p>
+<p>If you don’t specify -u username, crontab commands wil be executed on the current user.If you specify -u username, the crontab command will be executed on the given username. For example, to display the cron jobs of oracle user, combine -l with -u option.</p>
+   <img src="images/sample/blog/eg10.png" /><br /><br />
+
+   <h4>4. Load Crontab from a File</h4>
+   <p>Instead of manually editing the crontab to add new jobs, you can also upload all the cron jobs from a file. This is helpful when you have to maintain lot of servers that has the same cron job entries.</p>
+
+<p>In the following example, all the cron jobs are in the /home/root/mycronjobs.txt file.</p>
+  <img src="images/sample/blog/eg11.png" /><br /><br />
+  <p>To upload the mycronjobs.txt jobs to current user crontab, do the following:</p>
+  <img src="images/sample/blog/eg12.png" /><br /><br />
+  <p>Validate to make sure the cron jobs are successfully uploaded.</p>
+   <img src="images/sample/blog/eg13.png" /><br /><br />
+   <p>Note: Be careful while using this upload method, as this will wipe-out all the current cron job entries before uploading the new ones.</p>
+
+   <h4>6. Delete All Cron Jobs using Option -r</h4>
+
+<p>-r stands for remove. This will remove all the cron job entries of the current user as shown below.</p>
+    <img src="images/sample/blog/eg14.png" /><br /><br />
+    <p>-i stands for interactive mode. Combining -i with -r will ask you a confirmation before removing all the crontab entries.</p>
+    <img src="images/sample/blog/eg15.png" /><br /><br />
+
+    <h4>7. How to Disable/Redirect the Crontab Mail Output using MAIL keyword?</h4>
+
+<p>By default crontab sends the job output to the user who scheduled the job. If you want to redirect the output to a specific user, add or update the MAIL variable in the crontab as shown below.</p>
+
+<img src="images/sample/blog/eg16.png" /><br /><br />
+  
+  <h4>8. Specify PATH Variable in the Crontab</h4>
+
+  <p>All the above examples we specified absolute path of the Linux command or the shell-script that needs to be executed.</p>
+
+<p>For example, instead of specifying /home/ramesh/tape-backup, if you want to just specify tape-backup, then add the path /home/ramesh to the PATH variable in the crontab as shown below.</p>
+  <img src="images/sample/blog/eg17.png" /><br /><br />
+
+
+
+
+    
+    
     <hr>
     <div class="row-fluid">
     <div class="center">
