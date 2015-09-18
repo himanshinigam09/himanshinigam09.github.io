@@ -117,6 +117,7 @@
     Hyphens define ranges. For example, 2000-2010 indicates every year between 2000 and 2010 AD, inclusive.</p>
  <p><b>Percent ( % )</b>
     Percent-signs (%) in the command, unless escaped with backslash (\), are changed into newline characters, and all data after the first % are sent to the command as standard input.</p><br />
+    <h3>Using Cron</h3><br />
 
     <h4>1. Scheduling a Job For a Specific Time</h4><br />
 
@@ -137,7 +138,7 @@
 <p>This example checks the status of the database everyday (including weekends) during the working hours 9 a.m – 6 p.m</p>
   <img src="images/sample/blog/eg3.png" /><br /><br />
 
-  <h4>6. Schedule a Job for Every Minute Using Cron.</h4>
+  <h4>4. Schedule a Job for Every Minute Using Cron.</h4>
 
 <p>The * means all the possible unit — i.e every minute of every hour through out the year.</p>
 <img src="images/sample/blog/eg4.png" /><br /><br />
@@ -146,7 +147,7 @@
     <p>- When you specify 0-10/2 in minute field mean every 2 minutes in the first 10 minute.</p>
     <p>- Thus the above convention can be used for all the other 4 fields.</p><br />
 
-    <h4>7. Schedule a Background Cron Job For Every 10 Minutes.</h4>
+    <h4>5. Schedule a Background Cron Job For Every 10 Minutes.</h4>
 
 <p>Use the following, if you want to check the disk space every 10 minutes.</p>
   <img src="images/sample/blog/eg5.png" /><br /><br />
@@ -191,20 +192,20 @@
    <img src="images/sample/blog/eg13.png" /><br /><br />
    <p>Note: Be careful while using this upload method, as this will wipe-out all the current cron job entries before uploading the new ones.</p>
 
-   <h4>6. Delete All Cron Jobs using Option -r</h4>
+   <h4>5. Delete All Cron Jobs using Option -r</h4>
 
 <p>-r stands for remove. This will remove all the cron job entries of the current user as shown below.</p>
     <img src="images/sample/blog/eg14.png" /><br /><br />
     <p>-i stands for interactive mode. Combining -i with -r will ask you a confirmation before removing all the crontab entries.</p>
     <img src="images/sample/blog/eg15.png" /><br /><br />
 
-    <h4>7. How to Disable/Redirect the Crontab Mail Output using MAIL keyword?</h4>
+    <h4>6. How to Disable/Redirect the Crontab Mail Output using MAIL keyword?</h4>
 
 <p>By default crontab sends the job output to the user who scheduled the job. If you want to redirect the output to a specific user, add or update the MAIL variable in the crontab as shown below.</p>
 
 <img src="images/sample/blog/eg16.png" /><br /><br />
   
-  <h4>8. Specify PATH Variable in the Crontab</h4>
+  <h4>7. Specify PATH Variable in the Crontab</h4>
 
   <p>All the above examples we specified absolute path of the Linux command or the shell-script that needs to be executed.</p>
 
@@ -237,7 +238,7 @@
     </div><br />
     <p>In general, if your task needs to run more than a few times per hour (maybe less than 10 minutes) you probably want to run a daemon.</p>
 
-<p>A daemon which is always running, has the following benefits:
+<p>A daemon which is always running, has the following benefits:<br />
 
     1.It can run at frequencies greater than 1 per minute<br />
     2.It can remember state from its previous run more easily, which makes programming simpler (if you need to remember state) and can improve efficiency in some cases.<br />
