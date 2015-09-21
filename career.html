@@ -236,6 +236,11 @@
     <div class="center">
       <h2>Difference between Cronjobs and DAEMONS</h2>
     </div><br />
+    <p>A Daemon is a process which runs in the backgorund which doesn't need any user interaction. Once started it keeps on running its neccessary tasks.</p>
+
+<p>A Cron Batch process.... Now these are one of the jobs scheduled by the user in the cron tab files. Each of these files are executed as per the details mentioned by the user in the cron tab files. All these jobs scheduled are run by a daemon called crond.</p>
+
+<p>When & is used at the end of a command... it becomes a daemon.</p>
     <p>In general, if your task needs to run more than a few times per hour (maybe less than 10 minutes) you probably want to run a daemon.</p>
 
 <p>A daemon which is always running, has the following benefits:<br />
