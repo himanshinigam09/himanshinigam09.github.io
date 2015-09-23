@@ -89,11 +89,22 @@
       <p> It is an acronym for <b>"Command Run On Notice" or for "Commands Run Over Night"</b><br />
         The software utility Cron is a time-based job scheduler in Unix-like computer operating systems. People who set up and maintain software environments use cron to schedule jobs (commands or shell scripts) to run periodically at fixed times, dates, or intervals. It typically automates system maintenance or administration—though its general-purpose nature makes it useful for things like connecting to the Internet and downloading email at regular intervals.<br />
         "cron" is most suitable for scheduling repetitive tasks. Scheduling one-time tasks is often more easily accomplished using the associated at utility.</p>
+        <p>Cron assumes that the system is on continuously. If the system is not on when a task is scheduled, it is not executed.</p>
+        
         <hr><h3>System Cron Directories</h3>
         <p> In the /etc directory, you will find some sub-directories namely cron.hourly, cron.daily, cron.weekly and cron.monthly. You can put your scripts in these directories, and as their names suggest, they will be automatically executed after certain period of time. For example, if you wish to run a job or service regularly after every week, simple put the script in /etc/cron.weekly directory.</p>
 
 <p>In case you need to execute a script after every fortnight, keeping the script in any of the above mentioned directories will not help. But, every problem has a solution. You can launch Crontab (CRON TABle) editor which provides an interface that is very much similar to vi editor.</p>
 
+      <hr><h3>Controlling Access to Cron</h3>
+
+<p>The /etc/cron.allow and /etc/cron.deny files are used to restrict access to cron. The format of both access control files is one username on each line. Whitespace is not permitted in either file. The cron daemon (crond) does not have to be restarted if the access control files are modified. The access control files are read each time a user tries to add or delete a cron task.</p>
+
+<p>The root user can always use cron, regardless of the usernames listed in the access control files.</p>
+
+<p>If the file cron.allow exists, only users listed in it are allowed to use cron, and the cron.deny file is ignored.</p>
+
+<p>If cron.allow does not exist, users listed in cron.deny are not allowed to use cron.</p> 
     
     <hr><h3>Crontab File...</h3>
     <p>Cron is driven by a crontab (cron table) file,A crontab is a simple text file with a list of commands meant to be run at specified times. It is edited with a command-line utility. These commands (and their run times) are then controlled by the cron daemon, which executes them in the system background. A configuration file that specifies shell commands to run periodically on a given schedule. </p><p>The crontab files are stored where the lists of jobs and other instructions to the cron daemon are kept. Users can have their own individual crontab files and often there is a system wide crontab file (usually in /etc or a subdirectory of /etc) that only system administrators can edit.</p>
@@ -211,6 +222,37 @@
 
 <p>For example, instead of specifying /home/ramesh/tape-backup, if you want to just specify tape-backup, then add the path /home/ramesh to the PATH variable in the crontab as shown below.</p>
   <img src="images/sample/blog/eg17.png" /><br /><br />
+
+  <hr>
+  <h3>Anacron Vs Cron</h3>
+  <p>Anacron is the cron for desktops and laptops.
+
+Anacron does not expect the system to be running 24 x 7 like a server.</p>
+
+<p>When you want a background job to be executed automatically on a machine that is not running 24 x 7, you should use anacron.</p>
+<p>For example, if you have a backup script scheduled everyday at 11 PM as a regular cron job, and if your laptop is not up at 11 PM, your backup job will not be executed.
+
+However, if you have the same job scheduled in anacron, you can be sure that it will be executed once the laptop come back up.</p>
+<p> Jobs can be scheduled to be executed only in days.</p>
+
+<h4>Anacrontab Format</h4>
+<p>Just like how cron has /etc/crontab, anacron has /etc/anacrontab.
+
+/etc/anacrontab file has the anacron jobs mentioned in the following format.</p>
+
+<img src="images/sample/blog/cron17.png" /><br /><br />
+<p><b>Field 1 is Recurrence period:</b> This is a numeric value that specifies the number of days.</p>
+
+    1 – daily<br>
+    7 – weekly<br>
+    30 – monthly<br>
+    N – This can be any numeric value. N indicates number of days<br>
+
+Note: You can also use ‘@monthly’ for a job that needs to be executed monthly.<br>
+
+<p><b>Field 2 is Delay:</b> This indicates the delay in minutes. i.e X number of minutes anacron should wait before executing the job after the the machine starts.</p>
+
+<p><b>Field 3 is Job identifier:</b> It is the name for the job’s timestamp file. It should be unique for each job. This will be available as a file under the /var/spool/anacron directory. This file will contain a single line that indicates the last time when this job was executed.Field 4 is command: Command or shell script that needs to be executed.</p>
 
 
 
